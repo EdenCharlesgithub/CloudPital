@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ the_title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/4RVT7kB/acube-traders-1.png">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-image: url("https://i.ibb.co/YQXGB0L/background-1.png");
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+  </head>
+  <body>
+          <nav class="navbar bg-body-tertiary" style="background: rgba( 255, 255, 255, 0.25 );
+          box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+          backdrop-filter: blur( 4px );
+          -webkit-backdrop-filter: blur( 4px );
+          border-radius: 10px;
+          border: 1px solid rgba( 255, 255, 255, 0.18 );">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="/css/logo.png" alt="logo" width="40" height="40">
+                    MediGen AI
+                  </a>
+          
+            </div>
+          </nav>
+
+          <!--End Of Navbar-->
+
+          <!--Start of Symptoms-->
+          <div id="Symptom" class="container right" style="width:700px; float: left; margin:22px; background: rgba( 255, 255, 255, 0.35 );
+          box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+          backdrop-filter: blur( 0px );
+          -webkit-backdrop-filter: blur( 0px );
+          border-radius: 10px;">
+            <form name="SymptomForm" id="SymForm" method="POST" action=/disease_predict>
+              <div class="head">
+                <br>
+                <h1>Symptom Checker</h1>
+              </div>
+              <div class="form-group">
+                <!-- <select multiple data-role="tagsinput" class="form-control" size=1>
+                    {% for symp in symptoms  %}
+                    <option value= "{{symp}}">{{symp}}</option>
+                  {% endfor %}
+                </select> -->
+                <label for="Symptom1" align="left">Symptom1</label>
+                <input type="text" list="symp" multiple="multiple" class="form-control" name="Symptom1">
+                <datalist id="symp">
+                    {% for symp in symptoms %}
+                    <option value= "{{symp}}">{{symp}}</option>
+                  {% endfor %}
+                </datalist>
+          
+                <label for="Symptom2" align="left">Symptom2</label>
+                <input type="text" list="symp" multiple="multiple" class="form-control" name="Symptom2">
+                <datalist id="symp">
+                    {% for symp in symptoms %}
+                    <option value= "{{symp}}">{{symp}}</option>
+                  {% endfor %}
+                </datalist>
+          
+                <label for="Symptom3" align="left">Symptom3</label>
+                <input type="text" list="symp" multiple="multiple" class="form-control" name="Symptom3">
+                <datalist id="symp">
+                    {% for symp in symptoms %}
+                    <option value= "{{symp}}">{{symp}}</option>
+                  {% endfor %}
+                </datalist>
+          
+                <label for="Symptom4" align="left">Symptom4</label>
+                <input type="text" list="symp" multiple="multiple" class="form-control" name="Symptom4">
+                <datalist id="symp">
+                    {% for symp in symptoms %}
+                    <option value= "{{symp}}">{{symp}}</option>
+                  {% endfor %}
+                </datalist>
+          
+                <label for="Symptom5" align="left">Symptom5</label>
+                <input type="text" list="symp" multiple="multiple" class="form-control" name="Symptom5">
+                <datalist id="symp">
+                    {% for symp in symptoms %}
+                    <option value= "{{symp}}">{{symp}}</option>
+                  {% endfor %}
+                </datalist>
+          
+              </div>
+              <br>
+              <button type="submit" class="btn btn-primary" style="margin-bottom: 20px;" name=form>Check</button>
+          </form>
+          </div>
+
+          <div id="footer" style="background-color: black;
+          text-decoration: underline;
+          text-align: center;
+          font-family: sans-serif;
+          text-decoration-color: white;
+          color: white;
+          align-self: bottom; position: absolute; bottom: 0px; left: 0px; width: 100%; height: 50px;">
+            <p>Disclaimer: This information is provided solely for educational purposes and should not be considered a substitute for professional medical advice. We strongly recommend consulting with a qualified healthcare provider for any health-related concerns or questions. Your well-being is our priority, and we encourage you to seek personalized guidance tailored to your individual needs.</p>
+          </div>
+       
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+
+  
+        function openTab(tabName,elmnt,color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(tabName).style.display = "block";
+            elmnt.style.backgroundColor = color;
+        
+        }
+        
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+        
+        </script>
+    {% block body%}
+    
+    {% endblock %}
+  </body>
+</html>
